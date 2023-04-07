@@ -1,6 +1,3 @@
-import { NoInfer } from "@reduxjs/toolkit/dist/tsHelpers"
-import { Dispatch, SetStateAction, SyntheticEvent } from "react"
-
 /**
  *
  * @returns `class1 class2`
@@ -53,33 +50,6 @@ export function createQuery(queryObject?: Record<string | number, unknown> | nul
   return queryArray.filter(Boolean).join("&")
 }
 
-export function targetValue<M = string, V = string>(
-  callback: (value: NoInfer<M>) => void,
-  map?: (value: V) => M
-) {
-  return (value: V) => {
-    const valueMapped = map?.(value)
-
-    callback((valueMapped ?? value) as M)
-  }
-}
-
-export function inputValue<M = string>(
-  callback: (value: NoInfer<M>) => void,
-  map?: (value: string) => M
-) {
-  return (event: SyntheticEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const value = event.currentTarget.value
-    const valueMapped = map?.(value)
-
-    callback((valueMapped ?? value) as M)
-  }
-}
-
 export function isDictionary(object: unknown): object is Record<keyof never, unknown> {
   return object instanceof Object && object.constructor === Object
-}
-
-export function toggleState(setAction: Dispatch<SetStateAction<boolean>>): () => void {
-  return () => setAction(state => !state)
 }

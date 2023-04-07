@@ -1,7 +1,6 @@
 import "./PopupLayout.scss"
 
 import QueryBoundary from "app/containers/QueryBoundary"
-import ButtonIcon from "app/ui/common/Button/ButtonIcon"
 import { ReactNode, useEffect, useRef } from "react"
 import ReactGA from "react-ga4"
 import { useModalContext } from "react-modal-global"
@@ -30,7 +29,7 @@ function PopupLayout(props: PopupLayoutProps) {
   return (
     <div className="popup-layout" style={{ width: props.width }} ref={elementRef}>
       <div className="popup-layout__close">
-        <ButtonIcon name="cross" size="small" color="white" squared onClick={modal.close} ariaLabel="Close modal" />
+        X
       </div>
       <div className="popup-layout__container">
         <QueryBoundary>

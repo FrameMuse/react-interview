@@ -44,8 +44,8 @@ class JWT<P = unknown> {
     try {
       const payload = JWT.parse(jwt)
       exp = payload.exp * 1000
-    } catch (e: any) {
-      console.error(e)
+    } catch (error) {
+      console.error(error)
       exp = now + 30000 // default to 5 minutes from now
     }
     return exp - now
@@ -59,7 +59,7 @@ class JWT<P = unknown> {
    * and has the expected data in payload -> before submission to server for actual verification.
    *
    * Will throw if input is not parseable as a valid JWT.
-   * 
+   *
    * https://stackoverflow.com/questions/38552003/how-to-decode-jwt-token-in-javascript-without-using-a-library
    */
   public static parse<T>(token: string): JWTPayload & T {
@@ -68,7 +68,7 @@ class JWT<P = unknown> {
       throw new Error("ParsingError: Wrong JWT token format.", { cause: { token } })
     }
 
-    return JSON.parse(Buffer.from(tokenParts[1], "base64").toString())
+    return JSON.parse(Buffer.from(tokenParts[1], "base64").toString()) as never
   }
 }
 

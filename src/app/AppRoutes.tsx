@@ -1,9 +1,8 @@
 import { useEffect } from "react"
 import { Route, Routes, useLocation } from "react-router-dom"
 
-import { BaseLayout } from "./areas/base"
 import HomePage from "./pages/home"
-import UIKitPage from "./pages/ui-kit"
+import BaseLayout from "./ui/layouts/BaseLayout/BaseLayout"
 import Column from "./ui/layouts/Column/Column"
 import Headings from "./ui/layouts/Headings/Headings"
 import ErrorCover from "./ui/synthetic/ErrorCover/ErrorCover"
@@ -20,10 +19,6 @@ function AppRoutes() {
     <Routes>
       <Route element={<BaseLayout />}>
         <Route path={StaticRoutes.Home} element={<HomePage />} />
-        {/* <Route path={StaticRoutes.Home} element={<HomeView />} /> */}
-
-        <Route path={StaticRoutes.UIKit} element={<UIKitPage />} />
-
         {/* Error view */}
         <Route path="*" element={(
           <Column justifyItems="center">
@@ -61,16 +56,6 @@ function AppRoutes() {
  */
 export enum StaticRoutes {
   Home = "/",
-
-  ContactUs = "/contact-us",
-  FAQ = "/purchase#faq",
-  Reviews = "/purchase#reviews",
-  PrivacyPolicy = "/privacy-policy",
-  Terms = "/terms",
-  AboutUs = "/about-us",
-  FullCourse = "/full-course",
-  Purchase = "/purchase",
-  Profile = "/profile",
 
   UIKit = "/ui-kit",
 }

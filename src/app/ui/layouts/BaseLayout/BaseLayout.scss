@@ -1,0 +1,17 @@
+@import "~assets/scss/bundle.scss";
+
+.base-layout {
+	display: flex;
+	flex-direction: column;
+
+	min-height: 100vh;
+
+	main {
+		flex: 1;
+		padding: 2.5em;
+	}
+
+	footer {
+		margin-top: auto;
+	}
+}

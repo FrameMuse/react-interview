@@ -1,0 +1,22 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Cats are in dangerous!",
+      "description": "Save cats until they're gone!",
+      "preview": "https://picsum.photos/200/200"
+    },
+    {
+      "id": 2,
+      "title": "Today is the most colmest day ever!",
+      "description": "No dangerous today, you could rest all the day long ^_^",
+      "preview": "https://picsum.photos/200/200"
+    },
+    {
+      "id": 3,
+      "title": "Cats are in dangerous!",
+      "description": "Save cats until they're gone!",
+      "preview": "https://picsum.photos/200/200"
+    }
+  ]
+}

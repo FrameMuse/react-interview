@@ -1,14 +1,7 @@
 {
-  "typescript.preferences.autoImportFileExcludePatterns": [
-    "areas/**/components",
-    "areas/**/hooks",
-    "components/**/components",
-    "components/**/hooks"
-  ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "typescript.tsdk": "node_modules/typescript/lib",
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true
 }
